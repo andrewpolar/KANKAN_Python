@@ -685,6 +685,11 @@ void MediansSequential() {
 		double p1 = Pearson(prediction1, target1);
 		double p2 = Pearson(prediction2, target2);
 		printf("Pearsons for unseen data: %2.4f %2.4f %2.4f\n\n", p0, p1, p2);
+
+		//kan.ShowVectorMappings();
+		//kan.ShowFunctionsComplexity();
+		//kan.ShowLimitsInLayers();
+		//kan.ShowMatrices();
 	}
 	catch (const std::exception& ex) {
 		printf("%s\n", ex.what());
