@@ -160,6 +160,28 @@ public:
         }
     }
 
+    void ShowFeaturesTargets() {
+        printf("Features min/max\n");
+        for (size_t i = 0; i < featureMax.size(); ++i) {
+            printf("%6.4f ", featureMax[i]);
+        }
+        printf("\n");
+        for (size_t i = 0; i < featureMin.size(); ++i) {
+            printf("%6.4f ", featureMin[i]);
+        }
+        printf("\n");
+
+        printf("Targets min/max\n");
+        for (size_t i = 0; i < targetMax.size(); ++i) {
+            printf("%6.4f ", targetMax[i]);
+        }
+        printf("\n");
+        for (size_t i = 0; i < targetMin.size(); ++i) {
+            printf("%6.4f ", targetMin[i]);
+        }
+        printf("\n\n");
+    }
+
     void ShowVectorMappings() {
         const int nLayers = (int)this->layers.size();
         printf("Number of features %d\n", (int)featureMin.size());
@@ -193,6 +215,14 @@ public:
             this->layers[i].ShowAllU();
         }
         printf("\n");
+    }
+
+    void ShowKAN() {
+        ShowFeaturesTargets();
+        ShowVectorMappings();
+        ShowFunctionsComplexity();
+        ShowLimitsInLayers();
+        ShowMatrices();
     }
 
 private:
